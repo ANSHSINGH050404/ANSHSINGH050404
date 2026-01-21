@@ -41,7 +41,7 @@ const developer = {
   ],
   
   current_focus: {
-    learning: ["Next.js 15 App Router", "Agentic AI Systems", "Edge Computing"],
+    learning: ["Next.js 15 ", "Agentic AI Systems", "Langchain","RAG System"],
     building: ["AI-powered mobile apps", "Real-time collaboration tools"],
     exploring: ["LangChain integrations", "React Server Components"]
   }
@@ -75,7 +75,7 @@ const skills = {
 # Scalable systems
 stack = {
     "runtime": ["Node.js", "Bun"],
-    "frameworks": ["Express.js", "FastAPI"],
+    "frameworks": ["Express.js", "FastAPI","Langchain"],
     "databases": ["PostgreSQL", "MongoDB"],
     "orm": ["Drizzle ORM", "Prisma"]
 }
