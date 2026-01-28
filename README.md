@@ -18,7 +18,7 @@
 
 [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Live-2ea043?style=for-the-badge)](https://my-portfolio-iota-ashen-36.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com)
-[![Email](https://img.shields.io/badge/Email-Hire_Me-EA4335?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
+[![Email](https://img.shields.io/badge/Email-Hire_Me-EA4335?style=for-the-badge&logo=gmail)](mailto:anshsinghapa@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-+91--8887592949-25D366?style=for-the-badge&logo=whatsapp)](https://wa.me/918887592949)
 
 </div>
