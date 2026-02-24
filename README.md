@@ -30,7 +30,7 @@
 ```javascript
 const developer = {
   name: "Ansh Kumar Singh",
-  location: "Kanpur, India 🇮🇳",
+  location: "Uttar Pradesh, India 🇮🇳",
   mindset: "Ship fast, iterate faster",
   
   believes_in: [
