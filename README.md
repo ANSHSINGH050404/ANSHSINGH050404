@@ -41,7 +41,7 @@ const developer = {
   ],
   
   current_focus: {
-    learning: ["Next.js 15 ", "Agentic AI Systems", "Langchain","RAG System"],
+    learning: ["Next.js 15", "Agentic AI Systems", "LangChain", "RAG Systems"],
     building: ["AI-powered mobile apps", "Real-time collaboration tools"],
     exploring: ["LangChain integrations", "React Server Components"]
   }
@@ -75,7 +75,7 @@ const skills = {
 # Scalable systems
 stack = {
     "runtime": ["Node.js", "Bun"],
-    "frameworks": ["Express.js", "FastAPI","Langchain"],
+    "frameworks": ["Express.js", "FastAPI", "LangChain"],
     "databases": ["PostgreSQL", "MongoDB"],
     "orm": ["Drizzle ORM", "Prisma"]
 }
@@ -121,6 +121,62 @@ stack = {
 
 ---
 
+## 📊 GitHub Highlights
+
+<div align="center">
+
+<!-- GitHub Stats Card -->
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ANSHSINGH050404&show_icons=true&theme=dark&bg_color=0d1117&title_color=2ea043&icon_color=2ea043&text_color=c9d1d9&border_color=2a2a2a&hide_border=false&count_private=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+
+<!-- GitHub Streak -->
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ANSHSINGH050404&theme=dark&background=0d1117&ring=2ea043&fire=2ea043&currStreakLabel=2ea043&border=2a2a2a&sideLabels=c9d1d9&dates=c9d1d9&sideNums=ffffff&currStreakNum=ffffff)
+
+<!-- Top Languages -->
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ANSHSINGH050404&layout=compact&theme=dark&bg_color=0d1117&title_color=2ea043&text_color=c9d1d9&border_color=2a2a2a&langs_count=8)
+
+</div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+
+![Snake animation](https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/output/github-contribution-grid-snake-dark.svg)
+
+</div>
+
+> ⚙️ **Setup the snake animation:**
+> Create `.github/workflows/snake.yml` in your profile repo with the content below:
+> ```yaml
+> name: Generate Snake
+> on:
+>   schedule:
+>     - cron: "0 */12 * * *"
+>   workflow_dispatch:
+>   push:
+>     branches:
+>       - main
+> jobs:
+>   generate:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - uses: Platane/snk/svg-only@v3
+>         with:
+>           github_user_name: ANSHSINGH050404
+>           outputs: |
+>             dist/github-contribution-grid-snake.svg
+>             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+>       - uses: crazy-max/ghaction-github-pages@v3
+>         with:
+>           target_branch: output
+>           build_dir: dist
+>         env:
+>           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+> ```
+
+---
+
 ## 🌟 Why Hire Me?
 
 <div align="center">
@@ -140,20 +196,6 @@ stack = {
 + User-first approach: 100K+ users have used my applications
 + Open source contributor: Giving back to the community
 ```
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ANSHSINGH050404&show_icons=true&theme=dark&bg_color=0d1117&title_color=2ea043&icon_color=2ea043&text_color=c9d1d9&border_color=2a2a2a)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ANSHSINGH050404&layout=compact&theme=dark&bg_color=0d1117&title_color=2ea043&text_color=c9d1d9&border_color=2a2a2a)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ANSHSINGH050404&theme=dark&background=0d1117&ring=2ea043&fire=2ea043&currStreakLabel=2ea043&border=2a2a2a)
-
-</div>
 
 ---
 
@@ -210,7 +252,7 @@ const letsTalk: CollaborationOpportunity = {
 
 ### **Let's turn your ideas into reality**
 
-🌐 **Portfolio:** [https://my-portfolio-iota-ashen-36.vercel.app/](https://anshdev-tau.vercel.app/)  
+🌐 **Portfolio:** [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app/)  
 💼 **LinkedIn:** [Connect with me](https://linkedin.com)  
 📧 **Email:** [anshsinghapa@gmail.com](mailto:anshsinghapa@gmail.com)  
 📱 **WhatsApp:** [+91-8887592949](https://wa.me/918887592949)  
