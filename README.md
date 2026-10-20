@@ -51,7 +51,7 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-175 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
+168 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
