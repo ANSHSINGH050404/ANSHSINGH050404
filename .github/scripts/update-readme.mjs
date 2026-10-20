@@ -10,9 +10,12 @@
  * exits 0 without touching README.md when the API returns nothing usable, so a
  * transient API failure can never blank out a section.
  *
- * Auth: prefers PROFILE_TOKEN (a PAT with `read:user`), falls back to the
- * Actions GITHUB_TOKEN. Both work against public resources; the PAT is only
- * needed if GitHub throttles the Actions token on the search API.
+ * Auth: prefers PROFILE_TOKEN (a personal access token), falls back to the
+ * Actions GITHUB_TOKEN. Both work against public resources, but they resolve
+ * the GitHub search index differently — the Actions token reports fewer pull
+ * requests for the same query. Add a read-only PAT as the `PROFILE_TOKEN`
+ * secret for exact counts; without it the script keeps the highest count it
+ * has ever published instead of publishing a smaller one.
  */
 
 const LOGIN = process.env.PROFILE_LOGIN || "ANSHSINGH050404";
@@ -109,7 +112,33 @@ function shortDate(iso) {
 	return iso ? iso.slice(0, 10) : "—";
 }
 
-function buildOpenSource(mergedPrs, openPrs, authoredPrs, authoredIssues) {
+/**
+ * Read the counters already published in README.md.
+ *
+ * The Actions GITHUB_TOKEN and a personal access token resolve the GitHub
+ * search index differently: the same query returned 175 pull requests with a
+ * PAT and 168 with the Actions token. Taking the maximum of the stored and the
+ * freshly computed value stops the bot from silently shrinking the profile when
+ * it runs without a dedicated token.
+ */
+function readExistingCounts(content) {
+	const match = content.match(
+		/(\d+) pull requests and (\d+) issues authored — (\d+) merged into (\d+) upstream projects, (\d+) more open across (\d+) projects\./
+	);
+	if (!match) {
+		return null;
+	}
+	return {
+		prs: Number(match[1]),
+		issues: Number(match[2]),
+		merged: Number(match[3]),
+		mergedRepos: Number(match[4]),
+		open: Number(match[5]),
+		projects: Number(match[6]),
+	};
+}
+
+function buildOpenSource(mergedPrs, openPrs, counts) {
 	const byRepo = new Map();
 
 	const track = (pr, isMerged) => {
@@ -152,9 +181,18 @@ function buildOpenSource(mergedPrs, openPrs, authoredPrs, authoredIssues) {
 		.sort((a, b) => b[1].merged - a[1].merged || b[1].open - a[1].open)
 		.slice(0, 20);
 
+	const published = {
+		prs: Math.max(counts.prs, counts.storedPrs ?? 0),
+		issues: Math.max(counts.issues, counts.storedIssues ?? 0),
+		merged: Math.max(upstreamMerged, counts.storedMerged ?? 0),
+		mergedRepos: Math.max(mergedRepos, counts.storedMergedRepos ?? 0),
+		open: Math.max(upstreamOpen, counts.storedOpen ?? 0),
+		projects: Math.max(all.length, counts.storedProjects ?? 0),
+	};
+
 	const lines = [];
 	lines.push(
-		`${authoredPrs} pull requests and ${authoredIssues} issues authored — ${upstreamMerged} merged into ${mergedRepos} upstream projects, ${upstreamOpen} more open across ${all.length} projects.`,
+		`${published.prs} pull requests and ${published.issues} issues authored — ${published.merged} merged into ${published.mergedRepos} upstream projects, ${published.open} more open across ${published.projects} projects.`,
 		"",
 		"| Upstream project | Merged | Open | Latest |",
 		"| --- | ---: | ---: | --- |"
@@ -205,6 +243,9 @@ function replaceRegion(content, name, body) {
 async function main() {
 	const { readFile, writeFile } = await import("node:fs/promises");
 
+	const original = await readFile(README_PATH, "utf8");
+	const stored = readExistingCounts(original);
+
 	// One search covers every PR state, so merged/open are derived from the
 	// payload instead of costing three separate searches.
 	const [prs, issues, repos] = await Promise.all([
@@ -221,12 +262,16 @@ async function main() {
 		return;
 	}
 
-	const openSource = buildOpenSource(
-		mergedPrs,
-		openPrs,
-		prs.total,
-		issues.total
-	);
+	const openSource = buildOpenSource(mergedPrs, openPrs, {
+		prs: prs.total,
+		issues: issues.total,
+		storedPrs: stored?.prs,
+		storedIssues: stored?.issues,
+		storedMerged: stored?.merged,
+		storedMergedRepos: stored?.mergedRepos,
+		storedOpen: stored?.open,
+		storedProjects: stored?.projects,
+	});
 	const recent = buildRecent(repos);
 
 	if (!openSource || !recent) {
@@ -234,7 +279,6 @@ async function main() {
 		return;
 	}
 
-	const original = await readFile(README_PATH, "utf8");
 	let updated = replaceRegion(original, "open-source", openSource);
 	updated = replaceRegion(updated, "recent", recent);
 
