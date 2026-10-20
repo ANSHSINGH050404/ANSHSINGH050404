@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-readme
+  group: profile-write
   cancel-in-progress: false
 
 jobs:
@@ -46,4 +46,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "chore: refresh auto-generated README sections"
+          # Another workflow may have pushed to main while this one ran.
+          git pull --rebase --autostash origin main
           git push

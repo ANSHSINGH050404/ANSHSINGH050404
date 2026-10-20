@@ -8,6 +8,12 @@ on:
     branches:
       - main
 
+# Both workflows commit to main. Sharing one concurrency group makes them
+# queue instead of racing each other for the same branch.
+concurrency:
+  group: profile-write
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
