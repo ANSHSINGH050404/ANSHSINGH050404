@@ -5,7 +5,7 @@
 Full-stack engineer working across web, mobile, and developer tooling.
 TypeScript, React, Next.js, Node.js, PostgreSQL.
 
-[Portfolio](https://anshdev-tau.vercel.app/) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com) &nbsp;·&nbsp; [Email](mailto:anshsinghapa@gmail.com) &nbsp;·&nbsp; [WhatsApp](https://wa.me/918887592949)
+[Portfolio](https://anshdev-tau.vercel.app/) &nbsp;·&nbsp; [Email](mailto:anshsinghapa@gmail.com) &nbsp;·&nbsp; [WhatsApp](https://wa.me/918887592949)
 
 </div>
 
@@ -51,7 +51,6 @@ TypeScript, React, Next.js, Node.js, PostgreSQL.
 
 - **Email** — [anshsinghapa@gmail.com](mailto:anshsinghapa@gmail.com)
 - **Portfolio** — [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app/)
-- **LinkedIn** — [linkedin.com](https://linkedin.com)
 - **WhatsApp** — [+91 88875 92949](https://wa.me/918887592949)
 
 Open to full-time roles, freelance projects, and open-source collaboration.
