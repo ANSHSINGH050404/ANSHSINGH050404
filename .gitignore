@@ -1,3 +1,4 @@
-preview.html
-shot.png
+preview*.html
+shot*.png
+preview.py
 node_modules/
