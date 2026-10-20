@@ -1,7 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner-dark.svg">
-  <img alt="Ansh Singh — building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner-light.svg" width="100%">
-</picture>
+<img alt="Ansh Singh — building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner.svg" width="100%">
 
 <p align="center">
   <a href="https://anshdev-tau.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-58a6ff?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>
