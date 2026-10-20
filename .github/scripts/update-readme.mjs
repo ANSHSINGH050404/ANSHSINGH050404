@@ -217,10 +217,12 @@ function buildRecent(repos) {
 		return null;
 	}
 
-	const lines = ["| Project | Description | Last push |", "| --- | --- | --- |"];
+	// The date column carries no break opportunities, so placing it before the
+	// long description stops the date from wrapping onto two lines.
+	const lines = ["| Project | Last push | Description |", "| --- | --- | --- |"];
 	for (const repo of rows) {
 		lines.push(
-			`| [${repo.name}](https://github.com/${repo.full_name}) | ${cell(repo.description) || "—"} | ${shortDate(repo.pushed_at)} |`
+			`| [${repo.name}](https://github.com/${repo.full_name}) | ${shortDate(repo.pushed_at)} | ${cell(repo.description) || "—"} |`
 		);
 	}
 	return lines.join("\n");

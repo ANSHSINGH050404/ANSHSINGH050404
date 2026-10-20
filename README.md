@@ -48,7 +48,7 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-175 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
+176 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
@@ -73,14 +73,14 @@ Most of my work lands in other people's repositories.
 ## Recently Active
 
 <!-- auto:recent:start -->
-| Project | Description | Last push |
+| Project | Last push | Description |
 | --- | --- | --- |
-| [portfolio](https://github.com/ANSHSINGH050404/portfolio) | Personal portfolio of Ansh Kumar Singh — full-stack & agentic AI engineer (Next.js + TypeScript). | 2026-10-20 |
-| [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) | Record, inspect, and compare AI coding agent runs locally. No account, no database, no network calls. | 2026-10-18 |
-| [sheet2json](https://github.com/ANSHSINGH050404/sheet2json) | Turn Google Sheets into JSON APIs and shareable live tables with a read-only data assistant. | 2026-10-08 |
-| [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) | Paper trading platform | 2026-09-20 |
-| [SkillRegistry](https://github.com/ANSHSINGH050404/SkillRegistry) | Searchable registry for skills that extend AI coding agents | 2026-09-19 |
-| [CodeGlow](https://github.com/ANSHSINGH050404/CodeGlow) | CodeGlow is a modern web app that lets developers paste or write code, customize its visual appearance, preview it… | 2026-09-16 |
+| [portfolio](https://github.com/ANSHSINGH050404/portfolio) | 2026-10-20 | Personal portfolio of Ansh Kumar Singh — full-stack & agentic AI engineer (Next.js + TypeScript). |
+| [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) | 2026-10-18 | Record, inspect, and compare AI coding agent runs locally. No account, no database, no network calls. |
+| [sheet2json](https://github.com/ANSHSINGH050404/sheet2json) | 2026-10-08 | Turn Google Sheets into JSON APIs and shareable live tables with a read-only data assistant. |
+| [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) | 2026-09-20 | Paper trading platform |
+| [SkillRegistry](https://github.com/ANSHSINGH050404/SkillRegistry) | 2026-09-19 | Searchable registry for skills that extend AI coding agents |
+| [CodeGlow](https://github.com/ANSHSINGH050404/CodeGlow) | 2026-09-16 | CodeGlow is a modern web app that lets developers paste or write code, customize its visual appearance, preview it… |
 <!-- auto:recent:end -->
 
 ## Stack
