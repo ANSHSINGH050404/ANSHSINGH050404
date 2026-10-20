@@ -1,4 +1,5 @@
-preview*.html
-shot*.png
-preview.py
-node_modules/
+﻿tools/frames/
+tools/*.gif
+tools/*.mp4
+tools/*.png
+tools/*.html
