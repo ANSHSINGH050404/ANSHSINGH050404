@@ -1,4 +1,4 @@
-<img alt="Ansh Singh — building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner.svg" width="100%">
+<img alt="ANSH SINGH — building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner.svg" width="100%">
 
 <p align="center">
   <a href="https://anshdev-tau.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-58a6ff?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>
@@ -48,7 +48,7 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-176 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
+170 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
@@ -75,7 +75,7 @@ Most of my work lands in other people's repositories.
 <!-- auto:recent:start -->
 | Project | Last push | Description |
 | --- | --- | --- |
-| [portfolio](https://github.com/ANSHSINGH050404/portfolio) | 2026-10-20 | Personal portfolio of Ansh Kumar Singh — full-stack & agentic AI engineer (Next.js + TypeScript). |
+| [portfolio](https://github.com/ANSHSINGH050404/portfolio) | 2026-10-20 | Personal portfolio of ANSH SINGH — full-stack & agentic AI engineer (Next.js + TypeScript). |
 | [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) | 2026-10-18 | Record, inspect, and compare AI coding agent runs locally. No account, no database, no network calls. |
 | [sheet2json](https://github.com/ANSHSINGH050404/sheet2json) | 2026-10-08 | Turn Google Sheets into JSON APIs and shareable live tables with a read-only data assistant. |
 | [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) | 2026-09-20 | Paper trading platform |

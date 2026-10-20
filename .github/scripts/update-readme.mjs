@@ -10,12 +10,11 @@
  * exits 0 without touching README.md when the API returns nothing usable, so a
  * transient API failure can never blank out a section.
  *
- * Auth: prefers PROFILE_TOKEN (a personal access token), falls back to the
- * Actions GITHUB_TOKEN. Both work against public resources, but they resolve
- * the GitHub search index differently — the Actions token reports fewer pull
- * requests for the same query. Add a read-only PAT as the `PROFILE_TOKEN`
- * secret for exact counts; without it the script keeps the highest count it
- * has ever published instead of publishing a smaller one.
+ * Counts cover public work only. A token with repo scope also sees pull
+ * requests in private repositories, so those are filtered out explicitly —
+ * the published numbers have to match what a visitor can verify. The Actions
+ * GITHUB_TOKEN cannot see private repositories at all, which makes both paths
+ * agree without needing a personal access token.
  */
 
 const LOGIN = process.env.PROFILE_LOGIN || "ANSHSINGH050404";
@@ -63,20 +62,56 @@ async function gh(path, attempt = 0) {
 /** Paged search across issues+PRs. `cap` bounds the number of pages read. */
 async function search(query, cap = 10) {
 	const items = [];
-	let total = 0;
 	for (let page = 1; page <= cap; page += 1) {
 		const data = await gh(
 			`/search/issues?q=${encodeURIComponent(query)}&per_page=100&page=${page}`
 		);
-		// The search index is eventually consistent, so the reported total can
-		// shift between pages. Keep the highest value seen.
-		total = Math.max(total, data.total_count);
 		items.push(...data.items);
-		if (data.items.length < 100 || items.length >= total) {
+		// total_count is an estimate and can under-report, so page until a
+		// short page arrives rather than trusting it to stop the loop.
+		if (data.items.length < 100) {
 			break;
 		}
 	}
-	return { items, total };
+	return { items };
+}
+
+/** Repository full name for a search result. */
+function repoName(item) {
+	return String(item.repository_url ?? "").replace(
+		"https://api.github.com/repos/",
+		""
+	);
+}
+
+/**
+ * Repositories the token can see that are private.
+ *
+ * The search API returns private pull requests when the token carries repo
+ * scope, so they have to be filtered out explicitly — a public profile should
+ * only count work a visitor can verify. When the token cannot list private
+ * repositories (the Actions GITHUB_TOKEN), search already omits them, so an
+ * empty list is the correct answer.
+ */
+async function privateRepoNames() {
+	const names = new Set();
+	for (let page = 1; page <= 2; page += 1) {
+		let batch;
+		try {
+			batch = await gh(
+				`/user/repos?affiliation=owner&visibility=private&per_page=100&page=${page}`
+			);
+		} catch {
+			return names;
+		}
+		for (const repo of batch) {
+			names.add(repo.full_name);
+		}
+		if (batch.length < 100) {
+			break;
+		}
+	}
+	return names;
 }
 
 /** All repositories the profile owns, excluding forks. */
@@ -115,11 +150,8 @@ function shortDate(iso) {
 /**
  * Read the counters already published in README.md.
  *
- * The Actions GITHUB_TOKEN and a personal access token resolve the GitHub
- * search index differently: the same query returned 175 pull requests with a
- * PAT and 168 with the Actions token. Taking the maximum of the stored and the
- * freshly computed value stops the bot from silently shrinking the profile when
- * it runs without a dedicated token.
+ * Kept only to detect a shrinking profile: a sudden drop means the search API
+ * returned an incomplete result set, not that the work disappeared.
  */
 function readExistingCounts(content) {
 	const match = content.match(
@@ -182,12 +214,12 @@ function buildOpenSource(mergedPrs, openPrs, counts) {
 		.slice(0, 20);
 
 	const published = {
-		prs: Math.max(counts.prs, counts.storedPrs ?? 0),
-		issues: Math.max(counts.issues, counts.storedIssues ?? 0),
-		merged: Math.max(upstreamMerged, counts.storedMerged ?? 0),
-		mergedRepos: Math.max(mergedRepos, counts.storedMergedRepos ?? 0),
-		open: Math.max(upstreamOpen, counts.storedOpen ?? 0),
-		projects: Math.max(all.length, counts.storedProjects ?? 0),
+		prs: counts.prs,
+		issues: counts.issues,
+		merged: upstreamMerged,
+		mergedRepos,
+		open: upstreamOpen,
+		projects: all.length,
 	};
 
 	const lines = [];
@@ -250,14 +282,22 @@ async function main() {
 
 	// One search covers every PR state, so merged/open are derived from the
 	// payload instead of costing three separate searches.
-	const [prs, issues, repos] = await Promise.all([
+	const [prs, issues, repos, privateNames] = await Promise.all([
 		search(`author:${LOGIN} type:pr`),
 		search(`author:${LOGIN} type:issue`),
 		ownedRepos(),
+		privateRepoNames(),
 	]);
 
-	const mergedPrs = prs.items.filter((pr) => pr.pull_request?.merged_at);
-	const openPrs = prs.items.filter((pr) => pr.state === "open");
+	// Count only work a visitor can verify: pull requests and issues in
+	// private repositories are dropped.
+	const publicPrs = prs.items.filter((pr) => !privateNames.has(repoName(pr)));
+	const publicIssues = issues.items.filter(
+		(issue) => !privateNames.has(repoName(issue))
+	);
+
+	const mergedPrs = publicPrs.filter((pr) => pr.pull_request?.merged_at);
+	const openPrs = publicPrs.filter((pr) => pr.state === "open");
 
 	if (mergedPrs.length === 0 && openPrs.length === 0) {
 		console.log("no pull request data available; leaving README.md unchanged");
@@ -265,19 +305,22 @@ async function main() {
 	}
 
 	const openSource = buildOpenSource(mergedPrs, openPrs, {
-		prs: prs.total,
-		issues: issues.total,
-		storedPrs: stored?.prs,
-		storedIssues: stored?.issues,
-		storedMerged: stored?.merged,
-		storedMergedRepos: stored?.mergedRepos,
-		storedOpen: stored?.open,
-		storedProjects: stored?.projects,
+		prs: publicPrs.length,
+		issues: publicIssues.length,
 	});
 	const recent = buildRecent(repos);
 
 	if (!openSource || !recent) {
 		console.log("generated section was empty; leaving README.md unchanged");
+		return;
+	}
+
+	// A sudden drop means the search API returned an incomplete set, not that
+	// the work disappeared. Keep the published numbers until they recover.
+	if (stored && publicPrs.length < stored.prs * 0.9) {
+		console.log(
+			`pull request count dropped from ${stored.prs} to ${publicPrs.length}; keeping the published numbers`
+		);
 		return;
 	}
 

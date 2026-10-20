@@ -16,25 +16,18 @@ Never edit the content between `<!-- auto:open-source:start -->` and
 `<!-- auto:open-source:end -->`, or between `<!-- auto:recent:start -->` and
 `<!-- auto:recent:end -->`. The generator overwrites it.
 
-## Optional: exact counts with a personal access token
+## Counts cover public work only
 
-The generator works without any setup — the workflow's built-in `GITHUB_TOKEN`
-is enough to read public data.
+The generator counts pull requests and issues in public repositories. A token
+with `repo` scope also sees pull requests in private repositories — those are
+filtered out, so the published numbers match what a visitor can verify.
 
-That token and a personal access token resolve GitHub's search index
-differently, though: the same query reported 175 pull requests with a PAT and
-168 with the Actions token. The generator publishes the higher of the two
-values, so it never shrinks the numbers on its own. To get exact counts:
+That also means **no personal access token is needed**. The workflow's built-in
+`GITHUB_TOKEN` cannot see private repositories at all, so both paths agree.
 
-1. Create a fine-grained token at <https://github.com/settings/personal-access-tokens/new>
-   with **read-only** access to public repositories.
-2. Store it as an Actions secret:
-
-   ```bash
-   gh secret set PROFILE_TOKEN --repo ANSHSINGH050404/ANSHSINGH050404
-   ```
-
-No scopes beyond public read access are needed — the profile repo is public.
+The generator refuses to publish a count that drops by more than 10% from the
+previous run, since that means the search API returned an incomplete result
+set rather than that the work disappeared.
 
 ## Running the generator locally
 
@@ -43,4 +36,5 @@ node .github/scripts/update-readme.mjs
 ```
 
 It needs a token in `PROFILE_TOKEN` or `GITHUB_TOKEN`. With neither set it
-exits with an error rather than publishing stale-index numbers.
+exits with an error rather than publishing numbers from an unauthenticated
+search, which sees fewer results.
