@@ -1,0 +1,126 @@
+"""Render the Tracekit social preview image (1280x640) via headless Edge."""
+import subprocess, sys, pathlib, html
+
+EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+
+TERMINAL_LINES = [
+    ("prompt", "$ tracekit wrap -- node agent.js"),
+    ("out", "read src/auth.py"),
+    ("out", "wrote auth.py"),
+    ("ok", "tracekit: recorded run_1792499305569_5da396 (completed, 94ms, 2 file(s) changed)"),
+    ("dim", ""),
+    ("prompt", "$ tracekit inspect run_1792499305569_5da396"),
+    ("ok", "✓ git.snapshot        ✓ agent.started"),
+    ("ok", "✓ command.started    node agent.js"),
+    ("ok", "✓ command.stdout      ✓ command.finished"),
+    ("ok", "✓ file.write         auth.py"),
+    ("ok", "✓ git.snapshot        ✓ agent.finished"),
+    ("dim", ""),
+    ("out", "Files changed:  auth.py"),
+]
+
+CSS = """
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:640px; overflow:hidden; }
+body {
+  background:#0d1117;
+  color:#e6edf3;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  position:relative;
+}
+.texture {
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle, #30363d 1.2px, transparent 1.2px);
+  background-size:26px 26px; background-position:0 0;
+  opacity:.55;
+}
+.inner { position:relative; padding:56px 64px; height:100%; display:flex; flex-direction:column; }
+
+.terminal {
+  background:#010409;
+  border:1px solid #30363d;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 18px 48px rgba(1,4,9,.75);
+}
+.bar {
+  display:flex; align-items:center; gap:8px;
+  padding:11px 16px; border-bottom:1px solid #21262d; background:#0d1117;
+}
+.dot { width:11px; height:11px; border-radius:50%; }
+.bar .t { margin-left:12px; font:500 13px ui-monospace, Menlo, Consolas, monospace; color:#8b949e; }
+.body { padding:20px 22px 22px; font:14.5px/1.62 ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+.l-prompt { color:#e6edf3; }
+.l-prompt .sigil { color:#3fb950; font-weight:700; }
+.l-out   { color:#c9d1d9; }
+.l-ok    { color:#3fb950; }
+.l-add   { color:#79c0ff; }
+.l-dim   { color:#484f58; }
+
+.spacer { flex:1; }
+
+.brandrow { display:flex; align-items:flex-end; justify-content:space-between; }
+h1 {
+  font-size:64px; font-weight:800; letter-spacing:12px; line-height:1;
+  color:#e6edf3;
+}
+.rule { height:4px; margin:22px 0 20px; border-radius:2px;
+  background:linear-gradient(90deg,rgba(88,166,255,0) 0%,#58a6ff 18%,#a371f7 50%,#3fb950 82%,rgba(63,185,80,0) 100%); }
+.tag { font:400 25px/1.35 ui-sans-serif, -apple-system, 'Segoe UI', Roboto, sans-serif; color:#c9d1d9; max-width:820px; }
+.pills { display:flex; gap:12px; margin-top:22px; }
+.pill { font:500 14px ui-monospace, Menlo, Consolas, monospace; color:#8b949e;
+  border:1px solid #30363d; border-radius:999px; padding:7px 15px; background:#0d1117; }
+.pill b { color:#3fb950; font-weight:600; }
+.repo { font:500 15px ui-monospace, Menlo, Consolas, monospace; color:#58a6ff; }
+"""
+
+lines = []
+for kind, text in TERMINAL_LINES:
+    if not text:
+        lines.append('<div class="l-dim">&nbsp;</div>')
+    elif kind == "prompt":
+        lines.append(f'<div class="l-prompt"><span class="sigil">$</span> {html.escape(text[2:])}</div>')
+    else:
+        cls = {"out": "l-out", "ok": "l-ok", "add": "l-add", "dim": "l-dim"}[kind]
+        lines.append(f'<div class="{cls}">{text}</div>')
+
+doc = f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
+<div class="texture"></div>
+<div class="inner">
+  <div class="terminal">
+    <div class="bar">
+      <span class="dot" style="background:#ff5f56"></span>
+      <span class="dot" style="background:#ffbd2e"></span>
+      <span class="dot" style="background:#27c93f"></span>
+      <span class="t">tracekit — agent run trace</span>
+    </div>
+    <div class="body">
+      {chr(10).join("      " + l for l in lines)}
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="brandrow">
+    <h1>TRACEKIT</h1>
+    <span class="repo">github.com/ANSHSINGH050404/Tracekit</span>
+  </div>
+  <div class="rule"></div>
+  <div class="tag">Record, inspect, and compare AI coding agent runs locally.</div>
+  <div class="pills">
+    <span class="pill"><b>✓</b> zero-instrumentation recording</span>
+    <span class="pill"><b>✓</b> real unified diffs</span>
+    <span class="pill"><b>✓</b> secret redaction</span>
+    <span class="pill"><b>✓</b> no account · no DB · no network</span>
+  </div>
+</div>
+</body></html>"""
+
+out_html = pathlib.Path(sys.argv[1])
+out_png = pathlib.Path(sys.argv[2])
+out_html.write_text(doc, encoding="utf-8")
+subprocess.run(
+    [EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars",
+     "--force-device-scale-factor=1", "--window-size=1280,640",
+     f"--screenshot={out_png}", out_html.as_uri()],
+    capture_output=True,
+)
+print(out_png, out_png.stat().st_size if out_png.exists() else "MISSING")

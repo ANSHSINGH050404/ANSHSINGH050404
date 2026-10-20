@@ -37,6 +37,14 @@
   </tr>
 </table>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/tracekit-demo.gif" width="820" alt="Tracekit recording an agent run and inspecting the resulting trace" />
+</p>
+
+<p align="center">
+  <sub>Tracekit — a real recorded run: every tool call, command, and file diff, replayable in a local viewer.</sub>
+</p>
+
 ## Open Source
 
 Most of my work lands in other people's repositories.
