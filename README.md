@@ -56,11 +56,11 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-175 pull requests and 93 issues authored — 25 merged into 5 upstream projects, 24 more open across 16 projects.
+184 pull requests and 96 issues authored — 25 merged into 5 upstream projects, 27 more open across 16 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
-| [databuddy-analytics/Databuddy](https://github.com/databuddy-analytics/Databuddy) | 7 | 2 | 2026-10-19 |
+| [databuddy-analytics/Databuddy](https://github.com/databuddy-analytics/Databuddy) | 7 | 5 | 2026-10-20 |
 | [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | 7 | 2 | 2026-08-24 |
 | [novuhq/novu](https://github.com/novuhq/novu) | 6 | 0 | 2026-08-02 |
 | [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | 3 | 0 | 2026-09-16 |
@@ -83,8 +83,8 @@ Most of my work lands in other people's repositories.
 <!-- auto:recent:start -->
 | Project | Last push | Description |
 | --- | --- | --- |
-| [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) | 2026-10-20 | Record, inspect, and compare AI coding agent runs locally. No account, no database, no network calls. |
 | [portfolio](https://github.com/ANSHSINGH050404/portfolio) | 2026-10-20 | Personal portfolio of ANSH SINGH — full-stack & agentic AI engineer (Next.js + TypeScript). |
+| [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) | 2026-10-20 | Record, inspect, and compare AI coding agent runs locally. No account, no database, no network calls. |
 | [sheet2json](https://github.com/ANSHSINGH050404/sheet2json) | 2026-10-08 | Turn Google Sheets into JSON APIs and shareable live tables with a read-only data assistant. |
 | [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) | 2026-09-20 | Paper trading platform |
 | [SkillRegistry](https://github.com/ANSHSINGH050404/SkillRegistry) | 2026-09-19 | Searchable registry for skills that extend AI coding agents |
