@@ -56,7 +56,7 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-184 pull requests and 96 issues authored — 25 merged into 5 upstream projects, 27 more open across 16 projects.
+184 pull requests and 96 issues authored — 26 merged into 6 upstream projects, 26 more open across 16 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
@@ -65,13 +65,13 @@ Most of my work lands in other people's repositories.
 | [novuhq/novu](https://github.com/novuhq/novu) | 6 | 0 | 2026-08-02 |
 | [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | 3 | 0 | 2026-09-16 |
 | [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | 2 | 0 | 2026-10-12 |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 1 | 0 | 2026-10-22 |
 | [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 0 | 5 | 2026-07-19 |
 | [bug0inc/qa-agent](https://github.com/bug0inc/qa-agent) | 0 | 3 | 2026-07-16 |
 | [meteor/meteor](https://github.com/meteor/meteor) | 0 | 3 | 2026-02-23 |
 | [c2siorg/Codelabz](https://github.com/c2siorg/Codelabz) | 0 | 2 | 2026-02-23 |
 | [TerseAI/durable-actors](https://github.com/TerseAI/durable-actors) | 0 | 1 | 2026-10-07 |
 | [directus/directus](https://github.com/directus/directus) | 0 | 1 | 2026-10-01 |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 0 | 1 | 2026-09-26 |
 | [superloglabs/superlog](https://github.com/superloglabs/superlog) | 0 | 1 | 2026-09-18 |
 | [danielwh2/springline](https://github.com/danielwh2/springline) | 0 | 1 | 2026-09-11 |
 | [thewhitewolf09/ArcMart](https://github.com/thewhitewolf09/ArcMart) | 0 | 1 | 2026-09-02 |
