@@ -56,11 +56,10 @@ Most of my work lands in other people's repositories.
 - <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
 
 <!-- auto:open-source:start -->
-184 pull requests and 96 issues authored — 26 merged into 6 upstream projects, 26 more open across 16 projects.
+172 pull requests and 80 issues authored — 19 merged into 5 upstream projects, 21 more open across 15 projects.
 
 | Upstream project | Merged | Open | Latest |
 | --- | ---: | ---: | --- |
-| [databuddy-analytics/Databuddy](https://github.com/databuddy-analytics/Databuddy) | 7 | 5 | 2026-10-20 |
 | [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | 7 | 2 | 2026-08-24 |
 | [novuhq/novu](https://github.com/novuhq/novu) | 6 | 0 | 2026-08-02 |
 | [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | 3 | 0 | 2026-09-16 |
