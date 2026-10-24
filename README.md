@@ -1,20 +1,64 @@
-<img alt="ANSH SINGH — building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/banner.svg" width="100%">
-
-<p align="center">
-  <a href="https://anshdev-tau.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-58a6ff?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>
-  <a href="mailto:anshsinghapa@gmail.com"><img src="https://img.shields.io/badge/Email-e3663e?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://wa.me/918887592949"><img src="https://img.shields.io/badge/WhatsApp-3fb950?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp" /></a>
-</p>
-
-<p align="center">
-  <sub>Contributor to the agent stack — opencode · t3code · Novu · Fleetbase · Directus · Firecrawl</sub>
-</p>
+<!-- boot header -->
+<img alt="Terminal boot sequence for ANSH SINGH — full-stack and agentic AI engineer building tools for AI coding agents" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/boot.svg" width="100%">
 
 <img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/divider.svg" width="100%">
 
-## Upstream Open Source
+## `$ about`
 
-Most of my work lands in other people's repositories. The counts below are generated from the GitHub API, so they always match what a visitor can verify.
+<img alt="System profile: full-stack and agentic AI engineer focused on AI agents, developer tooling and backend systems. 19 merged pull requests upstream. TypeScript 77 percent. Next.js, React, PostgreSQL, Redis, Docker, Trigger.dev." src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/workstation.svg" width="100%">
+
+I build the layer underneath the AI product — the browser automation, the job queues, the streaming APIs, the auth, the schema. The parts that decide whether a demo becomes a system.
+
+Three rules I actually work by:
+
+> **Make it observable.** An agent run you cannot replay is a bug you cannot debug.
+>
+> **Own the boring layer.** Queues, schemas, retries, auth. That is where systems fail, not in the model.
+>
+> **Automate the second run.** The first run teaches you what to automate.
+
+## `$ ls ./projects`
+
+### 01 · `browseflow`
+
+**Visual AI browser automation.**
+
+A React Flow canvas where `Open URL`, `Act`, `Extract`, `Observe`, `Agent`, `HTTP`, `Wait`, `Condition` and email nodes are wired into a graph, then executed on Trigger.dev workers with live run status and Browserbase session replay. Stagehand drives the browser, Liveblocks keeps the canvas in sync for multiplayer editing, Clerk handles auth and org billing, and Neon + Drizzle persist the graph.
+
+`Next.js 16` · `React 19` · `Trigger.dev` · `Stagehand` · `Browserbase` · `Liveblocks` · `Clerk` · `Neon` · `Drizzle` · `Sentry`
+
+[live demo](https://browseflow-wine.vercel.app) · [source](https://github.com/ANSHSINGH050404/Browseflow-AI-browser-workflows)
+
+### 02 · `voicevue`
+
+**AI voice interview practice.**
+
+Vapi handles real-time speech while Gemini generates the questions, and a Next.js App Router front end drives the practice, library, results and leaderboard flows. Auth is JWT over MongoDB, with Supabase client utilities alongside.
+
+`Next.js` · `Gemini` · `Vapi` · `MongoDB` · `Supabase` · `JWT` · `Tailwind` · `Radix` · `Framer Motion`
+
+[live demo](https://voicevue-ai.vercel.app) · [source](https://github.com/ANSHSINGH050404/voicevue-ai)
+
+### 03 · `codeglow`
+
+**Turn code into images that look worth sharing.**
+
+Type or paste code onto a canvas, choose a syntax theme, one of five monospace fonts, a background and a glow, then export a PNG at 1–4x, an SVG or a JPEG. Shiki highlights while you type, a share link reopens an exact snippet for anyone, and a gallery of remixable starting points sits at `/gallery`. PostHog tracks the funnel; Bun runs the unit tests.
+
+`Next.js 16` · `React 19` · `Shiki` · `Tailwind v4` · `Radix` · `Zustand` · `html-to-image` · `Bun`
+
+[live demo](https://codeglow-kappa.vercel.app) · [source](https://github.com/ANSHSINGH050404/CodeGlow)
+
+<details>
+<summary>▸ replay a real coding-agent run</summary>
+
+<img alt="Tracekit recording an AI coding agent run — every tool call, command and file diff, replayable in a local viewer" src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/tracekit-demo.gif" width="100%">
+
+A real recorded session from [Tracekit](https://github.com/ANSHSINGH050404/Tracekit) — every tool call, command and file diff, replayable in a local viewer. No account, no database, no network calls.
+
+</details>
+
+## `$ git log --author=@me --merges`
 
 <!-- auto:open-source:start -->
 179 pull requests and 80 issues authored — 19 merged into 5 upstream projects, 21 more open across 15 projects.
@@ -38,54 +82,22 @@ Most of my work lands in other people's repositories. The counts below are gener
 | [gumloop/gumloop-js](https://github.com/gumloop/gumloop-js) | 0 | 1 | 2026-04-17 |
 <!-- auto:open-source:end -->
 
-### Merged pull requests
+Merged upstream, newest first:
 
-Every one of these was merged upstream.
-
-| Project | Pull request | What it fixed |
+| commit | upstream | what it fixed |
 | --- | --- | --- |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | [#51536](https://github.com/anomalyco/opencode/pull/51536) | The TUI degrades gracefully when `fs.watch` fails |
-| [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | [#15293](https://github.com/pingdotgg/t3code/pull/15293) | Queued threads stay subscribed |
-| [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | [#658](https://github.com/fleetbase/fleetbase/pull/658) | Two-factor verification is guarded against messageless errors |
-| [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | [#1207](https://github.com/The-Boring-Education/TBE-Web/pull/1207) | DSA showcase questions stay current by topic |
-| [novuhq/novu](https://github.com/novuhq/novu) | [#12184](https://github.com/novuhq/novu/pull/12184) | A single-job BullMQ enqueue is awaited, so jobs are not silently lost |
+| [`c93aaae371`](https://github.com/anomalyco/opencode/commit/c93aaae37157d785f76a8e9a9243a6560e286468) | [anomalyco/opencode#51536](https://github.com/anomalyco/opencode/pull/51536) | `fix(tui)` — degrade when `fs.watch` fails |
+| [`4a90c1cf5d`](https://github.com/pingdotgg/t3code/commit/4a90c1cf5db5f25893827643fb32d3304dddcdd9) | [pingdotgg/t3code#15293](https://github.com/pingdotgg/t3code/pull/15293) | `fix(web)` — keep queued threads subscribed |
+| [`abd4314197`](https://github.com/fleetbase/fleetbase/commit/abd4314197282041b0959baaf545d584a0d572ac) | [fleetbase/fleetbase#658](https://github.com/fleetbase/fleetbase/pull/658) | `fix(auth)` — guard 2FA against messageless errors |
+| [`df0a5171a9`](https://github.com/The-Boring-Education/TBE-Web/commit/df0a5171a98a2d24dc37bce91aadb587aed30d2d) | [TBE-Web#1207](https://github.com/The-Boring-Education/TBE-Web/pull/1207) | `fix(platform)` — keep DSA questions current |
+| [`038321cca2`](https://github.com/novuhq/novu/commit/038321cca264b6599553be4ee476b268acc837a8) | [novuhq/novu#12184](https://github.com/novuhq/novu/pull/12184) | `fix(app-generic)` — await BullMQ enqueue |
+| [`c651019baa`](https://github.com/novuhq/novu/commit/c651019baa93f56099d84b2c2a82cfc01233b924) | [novuhq/novu#12097](https://github.com/novuhq/novu/pull/12097) | `chore(api-service)` — log errors, do not swallow |
+| [`0a29f0fb80`](https://github.com/novuhq/novu/commit/0a29f0fb801eb3a6e8647668c50f442a8d360262) | [novuhq/novu#12095](https://github.com/novuhq/novu/pull/12095) | `fix(worker)` — drop the async Promise executor |
+| [`315bdfd550`](https://github.com/novuhq/novu/commit/315bdfd550cfbefc2996a9d04bcb672329d197c3) | [novuhq/novu#12079](https://github.com/novuhq/novu/pull/12079) | `fix` — disable connector dropdown while generating |
+| [`2b008c9b1f`](https://github.com/novuhq/novu/commit/2b008c9b1fe947a3f2564eac862d0dccd1dedf36) | [novuhq/novu#12068](https://github.com/novuhq/novu/pull/12068) | `fix(api,dashboard)` — cap agent id length, avoid 414 |
+| [`f31a13411d`](https://github.com/novuhq/novu/commit/f31a13411dd401993a2a1189506313c2e02d20ee) | [novuhq/novu#12019](https://github.com/novuhq/novu/pull/12019) | `docs` — fix platform spelling on the homepage |
 
-## What I Build
-
-<table>
-  <tr>
-    <td width="52" valign="middle" align="center"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/icon-observe.svg" width="28" alt="Observe" /></td>
-    <td valign="middle"><strong>Observe</strong> — <a href="https://github.com/ANSHSINGH050404/Tracekit"><strong>Tracekit</strong></a><br>Records AI coding agent runs — every tool call, command, and file diff — then replays them in a local viewer. No account, no database, no network calls.</td>
-  </tr>
-  <tr>
-    <td width="52" valign="middle" align="center"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/icon-extend.svg" width="28" alt="Extend" /></td>
-    <td valign="middle"><strong>Extend</strong> — <a href="https://github.com/ANSHSINGH050404/SkillRegistry"><strong>SkillRegistry</strong></a><br>Searchable registry for skills that extend AI coding agents.</td>
-  </tr>
-  <tr>
-    <td width="52" valign="middle" align="center"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/icon-run.svg" width="28" alt="Run" /></td>
-    <td valign="middle"><strong>Run</strong> — <a href="https://github.com/ANSHSINGH050404/Freecode"><strong>Freecode</strong></a><br>Terminal-based AI coding agent with streaming tools, Hono API, Prisma, and Clerk auth.</td>
-  </tr>
-  <tr>
-    <td width="52" valign="middle" align="center"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/icon-automate.svg" width="28" alt="Automate" /></td>
-    <td valign="middle"><strong>Automate</strong> — <a href="https://github.com/ANSHSINGH050404/builder-agent"><strong>builder-agent</strong></a><br>Autonomous DevOps agent for generating CI/CD pipelines and infrastructure templates.</td>
-  </tr>
-  <tr>
-    <td width="52" valign="middle" align="center"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/icon-publish.svg" width="28" alt="Publish" /></td>
-    <td valign="middle"><strong>Publish</strong> — <a href="https://github.com/ANSHSINGH050404/sheet2json"><strong>sheet2json</strong></a><br>Turns Google Sheets into JSON APIs and shareable live tables with a read-only data assistant.</td>
-  </tr>
-</table>
-
-Also worth a look — [portfolio](https://github.com/ANSHSINGH050404/portfolio) · [ai-interview](https://github.com/ANSHSINGH050404/ai-interview) · [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) · [CodeGlow](https://github.com/ANSHSINGH050404/CodeGlow)
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/tracekit-demo.gif" width="820" alt="Tracekit recording an agent run and inspecting the resulting trace" />
-</p>
-
-<p align="center">
-  <sub>Tracekit — a real recorded run: every tool call, command, and file diff, replayable in a local viewer.</sub>
-</p>
-
-## Recently Active
+## `$ ls ./recent`
 
 <!-- auto:recent:start -->
 | Project | Last push | Description |
@@ -98,30 +110,23 @@ Also worth a look — [portfolio](https://github.com/ANSHSINGH050404/portfolio) 
 | [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) | 2026-09-20 | Paper trading platform |
 <!-- auto:recent:end -->
 
-## Stack
+## `$ cat stack.txt`
 
-- **Languages** — TypeScript, JavaScript, Python, Go, Kotlin, Rust
-- **Frameworks** — Bun, Next.js, React, React Native, Express, FastAPI, Hono
-- **Data** — PostgreSQL, MongoDB, ClickHouse, Drizzle, Prisma
-- **Platform** — Docker, GitHub Actions, GCP, Firebase, TailwindCSS
+TypeScript is 77% of the 15.1 MB of code across 207 owned repositories, and 138 of those repositories are TypeScript. Everything else below is what the projects above actually needed:
 
-## GitHub
+| area | what ships with it |
+| --- | --- |
+| product | Next.js 16 · React 19 · Tailwind · Radix / Base UI · Zustand · Shiki |
+| backend | Hono · Express · WebSocket · BullMQ · Prisma · Drizzle |
+| data | PostgreSQL · Neon · MongoDB · Redis · LibSQL |
+| ai | Gemini · OpenAI · Anthropic · Vercel AI SDK · LangGraph · Stagehand |
+| platform | Vercel · Docker · GitHub Actions · Trigger.dev · Liveblocks · Clerk · Sentry · OpenTelemetry |
+| languages | TypeScript · JavaScript · Go · Python · Kotlin |
 
-<table>
-  <tr>
-    <td width="50%"><img src="https://github-readme-stats.vercel.app/api?username=ANSHSINGH050404&show_icons=true&theme=dark&bg_color=0d1117&border_color=30363d&title_color=c9d1d9&text_color=c9d1d9&icon_color=58a6ff&hide_border=true" alt="GitHub stats" /></td>
-    <td width="50%"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ANSHSINGH050404&layout=compact&theme=dark&bg_color=0d1117&border_color=30363d&title_color=c9d1d9&text_color=c9d1d9&hide_border=true&langs_count=8" alt="Top languages" /></td>
-  </tr>
-  <tr>
-    <td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=ANSHSINGH050404&theme=dark&background=0d1117&ring=30363d&fire=58a6ff&currStreakLabel=8b949e&currStreakNum=c9d1d9&sideLabels=8b949e&sideNums=c9d1d9&dates=8b949e" alt="Contribution streak" /></td>
-    <td width="50%"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" /></td>
-  </tr>
-</table>
+## `$ contact --all`
 
-## Contact
-
-- **Email** — [anshsinghapa@gmail.com](mailto:anshsinghapa@gmail.com)
-- **Portfolio** — [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app/)
-- **WhatsApp** — [+91 88875 92949](https://wa.me/918887592949)
+**GitHub** — [github.com/ANSHSINGH050404](https://github.com/ANSHSINGH050404)
+**Portfolio** — [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app)
+**X** — [@AnshSin18258375](https://x.com/AnshSin18258375)
 
 Open to maintainer roles in developer tooling, and to open-source collaboration.

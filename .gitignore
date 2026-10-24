@@ -3,6 +3,7 @@ shot*.png
 preview.py
 node_modules/
 
+preview/
 tools/frames/
 tools/*.gif
 tools/*.mp4

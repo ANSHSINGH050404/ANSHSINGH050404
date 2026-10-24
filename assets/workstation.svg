@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-label="System profile: full-stack and agentic AI engineer focused on AI agents, developer tooling and backend systems. 19 merged pull requests. TypeScript 77 percent. Next.js, React, PostgreSQL, Redis, Docker, Trigger.dev.">
+  <title>System profile</title>
+  <defs>
+    <clipPath id="panel"><rect x="0.5" y="0.5" width="999" height="299" rx="14"/></clipPath>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="999" height="299" rx="14" fill="#0a0e13" stroke="#1d2733"/>
+  <g clip-path="url(#panel)">
+    <rect x="0" y="0" width="1000" height="36" fill="#0f141b"/>
+    <line x1="0" y1="36" x2="1000" y2="36" stroke="#1d2733" stroke-width="1"/>
+  </g>
+  <circle cx="26" cy="18" r="5" fill="#2b3947"/>
+  <circle cx="44" cy="18" r="5" fill="#1d2733"/>
+  <circle cx="62" cy="18" r="5" fill="#1d2733"/>
+  <text x="88" y="23" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#63758a">ansh@workstation: ~/profile --system</text>
+
+  <text x="40" y="76" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">ROLE</text>
+  <text x="40" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">Full-stack &amp; agentic AI engineer</text>
+  <line x1="40" y1="110" x2="480" y2="110" stroke="#1d2733" stroke-width="1"/>
+  <text x="520" y="76" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">FOCUS</text>
+  <text x="520" y="98" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">AI agents · developer tooling · backend systems</text>
+  <line x1="520" y1="110" x2="960" y2="110" stroke="#1d2733" stroke-width="1"/>
+  <text x="40" y="132" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">UPSTREAM</text>
+  <text x="40" y="154" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">19 merged PRs · 21 open · 5 projects</text>
+  <line x1="40" y1="166" x2="480" y2="166" stroke="#1d2733" stroke-width="1"/>
+  <text x="520" y="132" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">SHIPPED</text>
+  <text x="520" y="154" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">Browseflow · VoiceVue · CodeGlow</text>
+  <line x1="520" y1="166" x2="960" y2="166" stroke="#1d2733" stroke-width="1"/>
+  <text x="40" y="188" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">LANGUAGES</text>
+  <text x="40" y="210" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">TypeScript 77% · JavaScript · Go · Python · Kotlin</text>
+  <line x1="40" y1="222" x2="480" y2="222" stroke="#1d2733" stroke-width="1"/>
+  <text x="520" y="188" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">DATA</text>
+  <text x="520" y="210" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">PostgreSQL · Redis · MongoDB · LibSQL</text>
+  <line x1="520" y1="222" x2="960" y2="222" stroke="#1d2733" stroke-width="1"/>
+  <text x="40" y="244" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">RUNTIME</text>
+  <text x="40" y="266" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">Next.js · React · Node · Bun · Hono · Express</text>
+  <line x1="40" y1="278" x2="480" y2="278" stroke="#1d2733" stroke-width="1"/>
+  <text x="520" y="244" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" letter-spacing="1.8" fill="#4ee6a8">PLATFORM</text>
+  <text x="520" y="266" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13.5" fill="#e8eef4">Vercel · Docker · Trigger.dev · Liveblocks · Clerk</text>
+  <line x1="520" y1="278" x2="960" y2="278" stroke="#1d2733" stroke-width="1"/>
+</svg>
