@@ -125,8 +125,8 @@ TypeScript is 77% of the 15.1 MB of code across 207 owned repositories, and 138 
 
 ## `$ contact --all`
 
-**GitHub** — [github.com/ANSHSINGH050404](https://github.com/ANSHSINGH050404)
-**Portfolio** — [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app)
-**X** — [@AnshSin18258375](https://x.com/AnshSin18258375)
+- **GitHub** — [github.com/ANSHSINGH050404](https://github.com/ANSHSINGH050404)
+- **Portfolio** — [anshdev-tau.vercel.app](https://anshdev-tau.vercel.app)
+- **X** — [@AnshSin18258375](https://x.com/AnshSin18258375)
 
 Open to maintainer roles in developer tooling, and to open-source collaboration.
