@@ -7,10 +7,48 @@
 </p>
 
 <p align="center">
-  <sub>Contributor to the agent stack — opencode · Databuddy · Directus · Novu · Firecrawl · superlog</sub>
+  <sub>Contributor to the agent stack — opencode · t3code · Novu · Fleetbase · Directus · Firecrawl</sub>
 </p>
 
 <img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/divider.svg" width="100%">
+
+## Upstream Open Source
+
+Most of my work lands in other people's repositories. The counts below are generated from the GitHub API, so they always match what a visitor can verify.
+
+<!-- auto:open-source:start -->
+179 pull requests and 80 issues authored — 19 merged into 5 upstream projects, 21 more open across 15 projects.
+
+| Upstream project | Merged | Open | Latest |
+| --- | ---: | ---: | --- |
+| [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | 7 | 2 | 2026-08-24 |
+| [novuhq/novu](https://github.com/novuhq/novu) | 6 | 0 | 2026-08-02 |
+| [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | 3 | 0 | 2026-09-16 |
+| [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | 2 | 0 | 2026-10-12 |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 1 | 0 | 2026-10-22 |
+| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 0 | 5 | 2026-07-19 |
+| [bug0inc/qa-agent](https://github.com/bug0inc/qa-agent) | 0 | 3 | 2026-07-16 |
+| [meteor/meteor](https://github.com/meteor/meteor) | 0 | 3 | 2026-02-23 |
+| [c2siorg/Codelabz](https://github.com/c2siorg/Codelabz) | 0 | 2 | 2026-02-23 |
+| [TerseAI/durable-actors](https://github.com/TerseAI/durable-actors) | 0 | 1 | 2026-10-07 |
+| [directus/directus](https://github.com/directus/directus) | 0 | 1 | 2026-10-01 |
+| [superloglabs/superlog](https://github.com/superloglabs/superlog) | 0 | 1 | 2026-09-18 |
+| [danielwh2/springline](https://github.com/danielwh2/springline) | 0 | 1 | 2026-09-11 |
+| [thewhitewolf09/ArcMart](https://github.com/thewhitewolf09/ArcMart) | 0 | 1 | 2026-09-02 |
+| [gumloop/gumloop-js](https://github.com/gumloop/gumloop-js) | 0 | 1 | 2026-04-17 |
+<!-- auto:open-source:end -->
+
+### Merged pull requests
+
+Every one of these was merged upstream.
+
+| Project | Pull request | What it fixed |
+| --- | --- | --- |
+| [anomalyco/opencode](https://github.com/anomalyco/opencode) | [#51536](https://github.com/anomalyco/opencode/pull/51536) | The TUI degrades gracefully when `fs.watch` fails |
+| [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | [#15293](https://github.com/pingdotgg/t3code/pull/15293) | Queued threads stay subscribed |
+| [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | [#658](https://github.com/fleetbase/fleetbase/pull/658) | Two-factor verification is guarded against messageless errors |
+| [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | [#1207](https://github.com/The-Boring-Education/TBE-Web/pull/1207) | DSA showcase questions stay current by topic |
+| [novuhq/novu](https://github.com/novuhq/novu) | [#12184](https://github.com/novuhq/novu/pull/12184) | A single-job BullMQ enqueue is awaited, so jobs are not silently lost |
 
 ## What I Build
 
@@ -37,6 +75,8 @@
   </tr>
 </table>
 
+Also worth a look — [portfolio](https://github.com/ANSHSINGH050404/portfolio) · [ai-interview](https://github.com/ANSHSINGH050404/ai-interview) · [Virtual-Trader](https://github.com/ANSHSINGH050404/Virtual-Trader) · [CodeGlow](https://github.com/ANSHSINGH050404/CodeGlow)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/assets/tracekit-demo.gif" width="820" alt="Tracekit recording an agent run and inspecting the resulting trace" />
 </p>
@@ -44,38 +84,6 @@
 <p align="center">
   <sub>Tracekit — a real recorded run: every tool call, command, and file diff, replayable in a local viewer.</sub>
 </p>
-
-## Open Source
-
-Most of my work lands in other people's repositories.
-
-- <a href="https://github.com/databuddy-analytics/Databuddy/pull/1109">fix(api): preserve ORPC error status instead of collapsing to 500</a> — databuddy-analytics/Databuddy
-- <a href="https://github.com/databuddy-analytics/Databuddy/pull/1112">fix(rpc): reject alarm websiteIds outside the organization</a> — databuddy-analytics/Databuddy
-- <a href="https://github.com/anomalyco/opencode/pull/51668">fix(core): finish child process when stdio stays held</a> — anomalyco/opencode
-- <a href="https://github.com/directus/directus/pull/28315">fix(graphql): merge selections from every merged field node</a> — directus/directus
-- <a href="https://github.com/novuhq/novu/pull/12651">fix(dal): use subscriberId in delayed digest master guard index</a> — novuhq/novu
-
-<!-- auto:open-source:start -->
-179 pull requests and 80 issues authored — 19 merged into 5 upstream projects, 21 more open across 15 projects.
-
-| Upstream project | Merged | Open | Latest |
-| --- | ---: | ---: | --- |
-| [The-Boring-Education/TBE-Web](https://github.com/The-Boring-Education/TBE-Web) | 7 | 2 | 2026-08-24 |
-| [novuhq/novu](https://github.com/novuhq/novu) | 6 | 0 | 2026-08-02 |
-| [fleetbase/fleetbase](https://github.com/fleetbase/fleetbase) | 3 | 0 | 2026-09-16 |
-| [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | 2 | 0 | 2026-10-12 |
-| [anomalyco/opencode](https://github.com/anomalyco/opencode) | 1 | 0 | 2026-10-22 |
-| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 0 | 5 | 2026-07-19 |
-| [bug0inc/qa-agent](https://github.com/bug0inc/qa-agent) | 0 | 3 | 2026-07-16 |
-| [meteor/meteor](https://github.com/meteor/meteor) | 0 | 3 | 2026-02-23 |
-| [c2siorg/Codelabz](https://github.com/c2siorg/Codelabz) | 0 | 2 | 2026-02-23 |
-| [TerseAI/durable-actors](https://github.com/TerseAI/durable-actors) | 0 | 1 | 2026-10-07 |
-| [directus/directus](https://github.com/directus/directus) | 0 | 1 | 2026-10-01 |
-| [superloglabs/superlog](https://github.com/superloglabs/superlog) | 0 | 1 | 2026-09-18 |
-| [danielwh2/springline](https://github.com/danielwh2/springline) | 0 | 1 | 2026-09-11 |
-| [thewhitewolf09/ArcMart](https://github.com/thewhitewolf09/ArcMart) | 0 | 1 | 2026-09-02 |
-| [gumloop/gumloop-js](https://github.com/gumloop/gumloop-js) | 0 | 1 | 2026-04-17 |
-<!-- auto:open-source:end -->
 
 ## Recently Active
 
@@ -92,7 +100,7 @@ Most of my work lands in other people's repositories.
 
 ## Stack
 
-- **Languages** — TypeScript, JavaScript, Python, Go, Kotlin
+- **Languages** — TypeScript, JavaScript, Python, Go, Kotlin, Rust
 - **Frameworks** — Bun, Next.js, React, React Native, Express, FastAPI, Hono
 - **Data** — PostgreSQL, MongoDB, ClickHouse, Drizzle, Prisma
 - **Platform** — Docker, GitHub Actions, GCP, Firebase, TailwindCSS
@@ -106,7 +114,7 @@ Most of my work lands in other people's repositories.
   </tr>
   <tr>
     <td width="50%"><img src="https://github-readme-streak-stats.herokuapp.com/?user=ANSHSINGH050404&theme=dark&background=0d1117&ring=30363d&fire=58a6ff&currStreakLabel=8b949e&currStreakNum=c9d1d9&sideLabels=8b949e&sideNums=c9d1d9&dates=8b949e" alt="Contribution streak" /></td>
-    <td width="50%"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" /></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/ANSHSINGH050404/ANSHSINGH050404/main/output/github-contribution-grid-snake-dark.svg" alt="Contribution graph" /></td>
   </tr>
 </table>
 
